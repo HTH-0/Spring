@@ -7,11 +7,10 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>PAGE01</h1>
-	USERNAME : ${dto.username} <br/>
-	AGE : ${dto.age} <br/>
-	ADDR : ${dto.addr} <br/>
+	<h1>REDIRECT_RESULT</h1>
+	${r1} <br/>
+	${r2} <br/>
+	${r3} <br/>
 	
-	${test}
 </body>
 </html>

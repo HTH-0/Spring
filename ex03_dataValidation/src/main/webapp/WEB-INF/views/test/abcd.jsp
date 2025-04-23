@@ -7,11 +7,6 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<h1>PAGE01</h1>
-	USERNAME : ${dto.username} <br/>
-	AGE : ${dto.age} <br/>
-	ADDR : ${dto.addr} <br/>
-	
-	${test}
+	<h1>ABDC TEST</h1>
 </body>
 </html>
