@@ -1,5 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="ex02_parameter"/>
 <aop-project name="ex01_lombok_di"/>
 <aop-project name="ex00_init"/>
+<aop-project name="ex03_dataValidation"/>
 </aop-reference-model>
