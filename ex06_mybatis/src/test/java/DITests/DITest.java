@@ -11,7 +11,7 @@ import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
 import com.example.app.config.PersonComponent;
-import com.example.app.domain.Dto.PersonDto;
+import com.example.app.domain.dto.PersonDto;
 
 
 @ExtendWith(SpringExtension.class)

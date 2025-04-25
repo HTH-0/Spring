@@ -19,8 +19,8 @@ import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.example.app.domain.Dto.MemoDto;
 import com.example.app.domain.Service.MemoServiceImpl;
+import com.example.app.domain.dto.MemoDto;
 
 import lombok.extern.slf4j.Slf4j;
 

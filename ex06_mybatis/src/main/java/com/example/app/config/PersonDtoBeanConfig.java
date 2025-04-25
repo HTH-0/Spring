@@ -3,7 +3,7 @@ package com.example.app.config;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 
-import com.example.app.domain.Dto.PersonDto;
+import com.example.app.domain.dto.PersonDto;
 
 @Configuration
 public class PersonDtoBeanConfig {

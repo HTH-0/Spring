@@ -17,7 +17,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
 
-import com.example.app.domain.Dto.PersonDto;
+import com.example.app.domain.dto.PersonDto;
 
 import lombok.extern.slf4j.Slf4j;
 

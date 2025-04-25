@@ -15,7 +15,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.InitBinder;
 import org.springframework.web.bind.annotation.PostMapping;
 
-import com.example.app.domain.Dto.UserDto;
+import com.example.app.domain.dto.UserDto;
 
 import lombok.extern.slf4j.Slf4j;
 
