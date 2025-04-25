@@ -1,6 +1,7 @@
 package com.example.app.controller;
 
 import java.beans.PropertyEditorSupport;
+import java.io.FileNotFoundException;
 import java.sql.SQLException;
 import java.time.LocalDate;
 import java.time.format.DateTimeFormatter;
@@ -31,12 +32,18 @@ public class MemoController {
 	@Autowired
 	private MemoServiceImpl memoServiceImpl;
 	
-	@InitBinder
-	public void dataBinder(WebDataBinder webDataBinder) {
-		log.info("MemoController's DataBinder ... " + webDataBinder);
-		webDataBinder.registerCustomEditor(LocalDate.class, "dateTest", new DateTestEditor());
+//	@InitBinder
+//	public void dataBinder(WebDataBinder webDataBinder) {
+//		log.info("MemoController's DataBinder ... " + webDataBinder);
+//		webDataBinder.registerCustomEditor(LocalDate.class, "dateTest", new DateTestEditor());
+//	}
+	
+	@GetMapping("/ex")
+	public void ex1_1() throws FileNotFoundException{
+		log.info("GET -");
+		throw new FileNotFoundException("파일을 찾을수가 없습니다.");
 	}
-
+	
 	@GetMapping("/add")
 	public void add_get() {
 
@@ -52,11 +59,12 @@ public class MemoController {
 				log.info("Error field : " + error.getField() + " Error Msg : " + error.getDefaultMessage());
 				model.addAttribute(error.getField(), error.getDefaultMessage());
 			}
+			return;
 		}
 		
 		// 서비스
 		
-		boolean isAdd = memoServiceImpl.registrationMemo(dto);
+		boolean isAdded = memoServiceImpl.registrationMemo(dto);
 		
 	}
 

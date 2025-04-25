@@ -16,10 +16,10 @@ import com.example.app.domain.Dto.MemoDto;
 public class MemoDaoImpl {
 	
 	@Autowired
-	private DataSource dataSource;
+	private DataSource dataSource1;
 	
 	public int insert(MemoDto memoDto) throws SQLException{
-		Connection con = dataSource.getConnection();
+		Connection con = dataSource1.getConnection();
 		PreparedStatement pstmt = con.prepareStatement("Insert into tbl_memo values(?,?,?,?)");
 		pstmt.setInt(1, memoDto.getId());
 		pstmt.setString(2, memoDto.getText());
