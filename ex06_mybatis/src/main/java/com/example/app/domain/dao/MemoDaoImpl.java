@@ -33,6 +33,12 @@ public class MemoDaoImpl {
 //				
 //	}
 	@Autowired
-	private SqlSession session;
+	private SqlSession sqlSession;
 	private static String namespace="com.example.app.domain.mapper.MemoMapper.";
+	
+	public int insert(MemoDto memoDto) throws SQLException{
+		sqlSession.insert(namespace+"insert", memoDto);
+		System.out.println("MemoDaoImpl's Insert invoke ..." + memoDto);
+		return memoDto.getId();
+	}
 }

@@ -32,7 +32,7 @@ public class MemoDto {
 	@NotNull(message ="날짜를 입력해주세요")
 	private LocalDateTime createAt;
 	
-	private LocalDate dateTest;
+//	private LocalDate dateTest;
 	
 	
 }

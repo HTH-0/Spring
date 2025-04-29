@@ -2,7 +2,9 @@ package DbTests;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-import java.time.LocalDateTime;
+import java.util.HashMap;
+import java.util.List;
+import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
@@ -13,7 +15,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit.jupiter.SpringExtension;
 
-import com.example.app.domain.dto.MemoDto;
 import com.example.app.domain.mapper.MemoMapper;
 
 @ExtendWith(SpringExtension.class)
@@ -52,11 +53,24 @@ class MybatisTests {
 		
 //		List<Map<String,Object>> list = memoMapper.selectAllResultMapXml();
 //		list.forEach(System.out::println);
-		MemoDto dto = new MemoDto(null, "a11", "a@naver.com", LocalDateTime.now(), null);
-		memoMapper.insert(dto);
-		System.out.println("Result : " + dto);
+//		MemoDto dto = new MemoDto(null, "a11", "a@naver.com", LocalDateTime.now());
+//		memoMapper.insert(dto);
+//		System.out.println("Result : " + dto);
 	}
 	
+	@Test
+	void t3() {
+		Map<String, Object> param = new HashMap<>();
+		param.put("type", "writer");
+		param.put("keyword", "TEST");
+		
+//		List<Map<String, Object>> response = memoMapper.Select_if_xml(param);
+//		response.forEach(System.out::println);
+		
+		List<Map<String, Object>> response = memoMapper.Select_when_xml(param);
+		response.forEach(System.out::println);
+		
+	}
 	
 
 }

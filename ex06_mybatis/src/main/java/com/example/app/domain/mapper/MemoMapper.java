@@ -50,5 +50,6 @@ public interface MemoMapper {
 	public List<MemoDto> selectAllXml();
 	public List<Map<String, Object>> selectAllResultMapXml();
 
-	
+	public List<Map<String,Object>> Select_if_xml(Map<String,Object> param);
+	public List<Map<String, Object>> Select_when_xml(Map<String, Object> param);
 }
