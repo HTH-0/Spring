@@ -21,11 +21,14 @@ public class PrincipalDetailsService implements UserDetailsService{
 	@Override
 	public UserDetails loadUserByUsername(String username) throws UsernameNotFoundException {
 		
-		UserDto userDto = userMapper.SelectAt(username);
-		if(userDto==null) {
-			throw new UsernameNotFoundException(username + "은/는 존재하지 않는 계정입니다.");
-		}
+		System.out.println("loadUserByUsername .. " + username);
+		UserDto userDto =  userMapper.selectAt(username);
+		if(userDto==null)
+			throw new UsernameNotFoundException(username + " 존재하지 않는 계정입니다.");
 		
 		return new PrincipalDetails(userDto);
 	}
+
 }
+
+

@@ -7,6 +7,8 @@ import java.time.format.DateTimeFormatter;
 import javax.validation.Valid;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.validation.BindingResult;
@@ -35,25 +37,48 @@ public class UserController {
 		webDataBinder.registerCustomEditor(String.class, "phone", new PhoneEditor());
 		webDataBinder.registerCustomEditor(LocalDate.class, "birthday", new BirthdayEditor());
 	}
-
+	
+	
 	@GetMapping("/login")
-	public void login(){
+	public void login() {
 		log.info("GET /login...");
 	}
+	
+//	@GetMapping("/user")
+//	public void user(Authentication authentication) {
+//		log.info("GET /user..." + authentication);
+//		log.info("name..." + authentication.getName());
+//		log.info("principal..." + authentication.getPrincipal());
+//		log.info("authorities..." + authentication.getAuthorities());
+//		log.info("details..." + authentication.getDetails());
+//		log.info("credential..." + authentication.getCredentials());
+//	}
+	
+//	@GetMapping("/user")
+//	public void user(@AuthenticationPrincipal Principal principal) {
+//		log.info("GET /user..." + principal);
+//	}
+	
 	@GetMapping("/user")
-	public void user() {
+	public void user(Model model) {
 		log.info("GET /user...");
+		Authentication authenticaton = 
+		SecurityContextHolder.getContext().getAuthentication();
+		log.info("authentication : " + authenticaton);
+		
+		model.addAttribute("auth",authenticaton);
+		
 	}
+	
 	@GetMapping("/manager")
 	public void manager() {
-		log.info("GET /manager...");
-
+		log.info("GET /manager...");	
 	}
 	@GetMapping("/admin")
 	public void admin() {
-		log.info("GET /admin...");
-
+		log.info("GET /admin...");	
 	}
+	
 	
 	
 	@GetMapping("/join")
@@ -61,20 +86,22 @@ public class UserController {
 		log.info("GET /join..");
 	}
 	@PostMapping("/join")
-	public String join_post(@Valid UserDto dto,BindingResult bindingResult,Model model, RedirectAttributes redirectAttributes) {
+	public String join_post(@Valid UserDto dto,BindingResult bindingResult,Model model,RedirectAttributes redirectAttributes ) {
 		log.info("POST /join.." + dto);
 		
 		for(FieldError error : bindingResult.getFieldErrors()) {
 			log.info("Error Field : "+error.getField()+" Error Msg : "+error.getDefaultMessage());
 			model.addAttribute(error.getField(),error.getDefaultMessage());
-			return "/join";
+			return "join";
 		}
-		boolean isJoin = userService.userjoin(dto);
+		
+		boolean isJoin  = userService.userJoin(dto);
 		if(isJoin) {
-			redirectAttributes.addFlashAttribute("message", "회원가입 완료!");
+			redirectAttributes.addFlashAttribute("message","회원가입 완료!");
 			return "redirect:/login";
-		}else
-			return "/join";
+		}
+		else
+			return "join";
 	}
 	
 	private static class PhoneEditor extends PropertyEditorSupport {

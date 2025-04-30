@@ -17,10 +17,12 @@ import lombok.NoArgsConstructor;
 @AllArgsConstructor
 @Builder
 public class UserDto {
+	
 	private String username;		//유저ID
 	@NotBlank(message="password 를 입력하세요")
 	private String password;	//패스워드
 	private String role;
+	
 //	@NotBlank(message="rePassword 를 입력하세요")
 //	private String rePassword;	//패스워드확인
 //	@NotBlank(message="username 를 입력하세요")

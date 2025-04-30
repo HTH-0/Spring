@@ -9,9 +9,10 @@ import com.example.app.domain.dto.UserDto;
 @Mapper
 public interface UserMapper {
 	
-	@Insert("insert into tbl_user values(#{username}, #{password}, #{role}")
+	@Insert("insert into tbl_user values(#{username},#{password},#{role})")
 	public int insert(UserDto userDto);
 	
-	@Select("select * FROm tbl_user where username=#{username}")
-	public UserDto SelectAt(String userename);
+	@Select("select * from tbl_user where username=#{username}")
+	public UserDto selectAt(String username);
+
 }

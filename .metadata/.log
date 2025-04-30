@@ -8919,3 +8919,9 @@ java.io.FileNotFoundException: Not Found
 
 !ENTRY org.eclipse.m2e.logback.appender 2 0 2025-04-30 11:42:58.055
 !MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2025-04-30 11:49:34.841
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
+
+!ENTRY org.eclipse.m2e.logback.appender 2 0 2025-04-30 11:49:34.842
+!MESSAGE Using platform encoding (MS949 actually) to copy filtered resources, i.e. build is platform dependent!
