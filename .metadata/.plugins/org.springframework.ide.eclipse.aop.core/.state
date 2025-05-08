@@ -1,8 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <aop-reference-model>
+<aop-project name="ex14_springSecurity"/>
 <aop-project name="ex08_restController"/>
 <aop-project name="ex09_fileUpDownload"/>
-<aop-project name="ex10_interceptor"/>
+<aop-project name="ex03_dataValidation"/>
 <aop-project name="ex06_mybatis"/>
+<aop-project name="ex02_parameter"/>
+<aop-project name="ex05_dataSource"/>
+<aop-project name="ex10_interceptor"/>
+<aop-project name="ex01_lombok_di"/>
+<aop-project name="ex04_exception"/>
+<aop-project name="ex00_init"/>
 <aop-project name="ex07_tx"/>
 </aop-reference-model>
